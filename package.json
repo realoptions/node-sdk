@@ -1,0 +1,31 @@
+{
+  "name": "realoptions-node-sdk",
+  "version": "0.0.1",
+  "description": "SDK for real options for both client and node",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "download-docs": "./scripts/fetch_yaml.sh",
+    "mock-api": "./mocks/apisprout ./mocks/openapi.yaml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realoptions/node-sdk.git"
+  },
+  "keywords": [
+    "realoptions",
+    "sdk"
+  ],
+  "author": "Daniel Stahl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/realoptions/node-sdk/issues"
+  },
+  "homepage": "https://github.com/realoptions/node-sdk#readme",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
