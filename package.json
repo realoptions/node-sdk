@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "download-docs": "./scripts/fetch_yaml.sh",
-    "mock-api": "./mocks/apisprout ./mocks/openapi.yaml"
+    "mock-api": "nohup ./mocks/apisprout ./mocks/openapi.yaml &"
   },
   "repository": {
     "type": "git",

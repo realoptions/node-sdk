@@ -2,3 +2,5 @@ node_modules
 *.xz
 apisprout
 *.yaml
+nohup.out
+coverage

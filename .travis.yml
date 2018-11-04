@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '9'
+before_install:
+- npm run download-docs
+install:
+- npm install
+- npm run mock-api
+- npm test -- --coverage
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: npm
+  email: danstahl1138@gmail.com
+  api_key:
+    secure: vAL+C6hOrMxw7VH8AEgQXdX6WaJkOuKgku5sWl8pD0OsqBQwLhRJrl2HnG+2sEh9xq+T3nt8ETSuxLU4MSfsnqUgFzOIeo2b+QR6VGT5YcNkxgKxvkeDeIj6cYoh1H+23/LszuTttmuwD7ZHeXHXn0j2J/scDPZW8LdFdWN5jB6bwl1R0eKCov5ZdBQKC3e/Eq5sOueREToTraNOIqMwvne+cZutuvG0iRwmjLiPD60UkAnCqlnpZqCi2XixgmJMGWB5GVYf3fkyDsonDOPfpQ4YwsSdETC1R67AMI9agjc3rWr6l1wG/RsOxZdBoNAytD/0OpTILNrUBXFwlr7WiJryLVIuavjrZxvmQ5XPIbFTJrrKyQyJtfr3Q5oG2Pbpwy5w1mCWmyYdD58NmbHmwc7wTc+1jxJ0cKbDOyn53oUByhFt5fflcnTN4+LTSVZfziCxn7QDkiumA5f1/y8Bhk6aemlVOCI0d5oXp4Q8xD8C4h3X6MvMS67r4xr2ATKKJcq0HP8Z/+YbCTLmUYpkQYt2asctckRPafOXU9fVRvTV3Fiwey68lUJuWB3vPetHcI0TPyY8A797Ey+gR2RzJveRpTbXxIlj3NYWWLPnyAl7/Q26thcePTSYZHRfDd2GaLlNwR4mTrEbVTG4SM7LZjZAU/pxLFcNkg6fS9HR7vQ=
+  on:
+    tags: true
+    repo: realoptions/node-sdk
