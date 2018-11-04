@@ -1,3 +1,12 @@
+| [Linux][lin-link] | [Codecov][cov-link] |
+| :---------------: | :-----------------: |
+| ![lin-badge]      | ![cov-badge]        |
+
+[lin-badge]: https://travis-ci.org/realoptions/node-sdk.svg "Travis build status"
+[lin-link]:  https://travis-ci.org/realoptions/node-sdk "Travis build status"
+[cov-badge]: https://codecov.io/gh/realoptions/node-sdk/branch/master/graph/badge.svg
+[cov-link]:  https://codecov.io/gh/realoptions/node-sdk
+
 ## node-sdk for RealOptions
 
 ### Usage
