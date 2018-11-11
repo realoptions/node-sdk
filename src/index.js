@@ -1,10 +1,10 @@
 const ftch=global.fetch||require('node-fetch')
 
 const generic_calculation=({
-    body, version, optionType, 
+    body, version, optionType, includeIV=false,
     model, sensitivity, headers, url
 })=>ftch(
-    `${url}/${version}/${model}/calculator/${optionType}/${sensitivity}`,
+    `${url}/${version}/${model}/calculator/${optionType}/${sensitivity}?includeImpliedVolatility=${includeIV}`,
     {
         method:'POST',
         body:JSON.stringify(body),
@@ -38,8 +38,8 @@ const init=({
     }
     return {
         cgmy:{
-            options:(body, optionType, sensitivity)=>generic_calculation({
-                body, version, optionType, 
+            options:(body, optionType, sensitivity, includeIV)=>generic_calculation({
+                body, version, optionType, includeIV,
                 sensitivity, headers, url, model:'cgmy'
             }),
             density:(body)=>generic_density({
@@ -56,8 +56,8 @@ const init=({
             })
         },
         heston:{
-            options:(body, optionType, sensitivity)=>generic_calculation({
-                body, version, optionType, url,
+            options:(body, optionType, sensitivity, includeIV)=>generic_calculation({
+                body, version, optionType, url, includeIV,
                 sensitivity, headers, model:'heston'
             }),
             density:(body)=>generic_density({
@@ -74,8 +74,8 @@ const init=({
             })
         },
         merton:{
-            options:(body, optionType, sensitivity)=>generic_calculation({
-                body, version, optionType, url,
+            options:(body, optionType, sensitivity, includeIV)=>generic_calculation({
+                body, version, optionType, url, includeIV,
                 sensitivity, headers, model:'merton'
             }),
             density:(body)=>generic_density({
