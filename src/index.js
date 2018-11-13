@@ -90,6 +90,12 @@ const init=({
                 model:'merton', version, 
                 headers, url
             })
+        },
+        market:{
+            constraints:()=>generic_constraints({
+                model:'market', version, 
+                headers, url
+            })
         }
     }
 }

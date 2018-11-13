@@ -126,3 +126,8 @@ it('correctly calls merton options', ()=>{
         return expect(Array.isArray(results)).toEqual(true)
     })
 })
+it('correctly calls market constraints', ()=>{
+    return ro.market.constraints().then(results=>{
+        return expect(results).toBeDefined()
+    })
+})

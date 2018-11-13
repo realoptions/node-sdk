@@ -5,7 +5,7 @@ before_install:
 - npm run download-docs
 install:
 - npm install
-- npm run mock-api
+- npm run mock-api-background
 - npm test -- --coverage
 after_success:
 - bash <(curl -s https://codecov.io/bash)
