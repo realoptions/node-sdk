@@ -1,0 +1,4 @@
+mocks
+*.test.js
+coverage
+scripts
