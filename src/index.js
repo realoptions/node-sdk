@@ -15,7 +15,7 @@ const generic_density=({
     body, version, model, 
     headers, metric, url
 })=>ftch(
-    `${url}/${version}/${model}/${metric}`,
+    `${url}/${version}/${model}/density/${metric}`,
     {
         method:'POST',
         body:JSON.stringify(body),
