@@ -1,6 +1,6 @@
 {
   "name": "realoptions-node-sdk",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "SDK for real options for both client and node",
   "main": "src/index.js",
   "scripts": {
