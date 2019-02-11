@@ -1,5 +1,5 @@
 const ftch=global.fetch||require('node-fetch')
-
+const resJson=res=>res.json()
 const generic_calculation=({
     body, version, optionType, includeIV=false,
     model, sensitivity, headers, url
@@ -9,7 +9,7 @@ const generic_calculation=({
         method:'POST',
         body:JSON.stringify(body),
         headers
-    }).then(res=>res.json())
+    }).then(resJson)
 
 const generic_density=({
     body, version, model, 
@@ -20,14 +20,14 @@ const generic_density=({
         method:'POST',
         body:JSON.stringify(body),
         headers
-    }).then(res=>res.json())
+    }).then(resJson)
 
 const generic_constraints=({
     model, headers, 
     version, url
 })=>ftch(
     `${url}/${version}/${model}/parameters/parameter_ranges`,
-    {headers}).then(res=>res.json())
+    {headers}).then(resJson)
 
 const init=({
     api_key, version, 
