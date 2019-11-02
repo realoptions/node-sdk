@@ -13,6 +13,7 @@ jobs:
               run: |
                 npm run download-docs
                 npm ci
+                npm run mock-api-background
                 npm test 
             - name: Make prerelease to npm
               uses: epeli/npm-release@v1
