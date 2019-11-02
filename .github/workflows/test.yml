@@ -1,0 +1,15 @@
+name: test
+on: [push]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - name: test coverage
+              run: |
+                npm run download-docs
+                npm ci
+                npm run mock-api-background
+                npm test -- --coverage
+                bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
