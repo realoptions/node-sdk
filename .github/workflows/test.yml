@@ -11,6 +11,9 @@ jobs:
                 npm run download-docs
                 npm ci
                 npm run mock-api-background
-                sleep 10
+                while [ -s nohup.out ] # wait for mock-api to be created
+                do
+                  sleep 1
+                done
                 npm test -- --coverage
                 bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
