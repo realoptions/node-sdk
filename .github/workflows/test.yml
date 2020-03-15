@@ -10,7 +10,6 @@ jobs:
               run: |
                 npm run download-docs
                 npm ci
-                npm install -g @stoplight/prism-cli
-                nohup prism mock ./mocks/openapi.yaml &
+                npm run mock-api-background
                 npm test -- --coverage
                 bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
