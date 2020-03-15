@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "download-docs": "./scripts/fetch_yaml.sh",
-    "mock-api-background": "nohup ./mocks/apisprout ./mocks/openapi.yaml &",
-    "mock-api": "./mocks/apisprout ./mocks/openapi.yaml"
+    "mock-api-background": "nohup prism mock ./mocks/openapi.yaml &",
+    "mock-api": "prism mock ./mocks/openapi.yaml"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,10 @@
   },
   "homepage": "https://github.com/realoptions/node-sdk#readme",
   "dependencies": {
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "@stoplight/prism-cli": "^3.3.1",
+    "jest": "^25.1.0"
   }
 }
