@@ -1,1 +1,1 @@
-wget -O ./mocks/openapi.yaml https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/openapi_v2.yml
+wget -O ./mocks/openapi.yaml https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/openapi_gcp.yml
