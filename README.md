@@ -13,7 +13,7 @@
 
 ```javascript
 const realoptions=require('realoptions-node-sdk')
-const ro=realoptions({api_key:'YOUR_API_KEY', version:'v1'})
+const ro=realoptions({api_key:'YOUR_API_KEY', version:'v2'})
 ro.cgmy.constraints() //returns promise
 
 const cgmyParameters={
