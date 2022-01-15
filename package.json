@@ -5,9 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "download-docs": "./scripts/fetch_yaml.sh",
-    "mock-api-background": "nohup prism mock ./mocks/openapi.yaml &",
-    "mock-api": "prism mock ./mocks/openapi.yaml"
+    "mock-api-background": "nohup prism mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml &",
+    "mock-api": "prism mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml"
   },
   "repository": {
     "type": "git",
@@ -24,10 +23,10 @@
   },
   "homepage": "https://github.com/realoptions/node-sdk#readme",
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.6"
   },
   "devDependencies": {
-    "@stoplight/prism-cli": "^4.1.2",
-    "jest": "^26.6.3"
+    "@stoplight/prism-cli": "^4.6.1",
+    "jest": "^27.4.7"
   }
 }
