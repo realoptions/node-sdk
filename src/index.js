@@ -1,6 +1,7 @@
 const ftch = global.fetch || require('node-fetch')
 const resJson = res => res.json()
 const getVersion = version => version === '' ? version : version + '/'
+const headers = { 'Content-Type': 'application/json' }
 const generic_calculation = ({
     body, version, optionType, includeIV = false,
     model, sensitivity, apiKey, url
@@ -9,7 +10,7 @@ const generic_calculation = ({
     {
         method: 'POST',
         body: JSON.stringify(body),
-        headers: {}
+        headers
     }).then(resJson)
 
 const generic_density = ({
@@ -20,7 +21,7 @@ const generic_density = ({
     {
         method: 'POST',
         body: JSON.stringify(body),
-        headers: {}
+        headers
     }).then(resJson)
 
 const generic_constraints = ({
@@ -28,7 +29,7 @@ const generic_constraints = ({
     version, url
 }) => ftch(
     `${url}/${getVersion(version)}${model}/parameters/parameter_ranges?access_token=${apiKey}`,
-    { headers: {} }).then(resJson)
+    { headers }).then(resJson)
 
 const init = ({
     api_key, version,
