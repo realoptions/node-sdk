@@ -1,5 +1,5 @@
 const realoptions = require('./index')
-const mockurl = 'http://localhost:4010'
+const mockurl = 'http://127.0.0.1:4010'
 const ro = realoptions({ api_key: 'hello', version: '', url: mockurl })
 const hestonParameters = {
     num_u: 8,
