@@ -11,6 +11,7 @@ jobs:
               run: |
                 npm ci
                 npm run mock-api-background
+                sleep 3 # wait for mock-api-background to eget up and running
                 npm test 
             - name: Make prerelease to npm
               uses: epeli/npm-release@v1
