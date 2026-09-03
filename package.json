@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "mock-api-background": "nohup npx --yes @stoplight/prism-cli mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml &",
-    "mock-api": "npx --yes @stoplight/prism-cli mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml"
+    "mock-api-background": "nohup npx --yes --package=@stoplight/prism-cli prism mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml &",
+    "mock-api": "npx --yes --package=@stoplight/prism-cli prism mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml"
   },
   "repository": {
     "type": "git",

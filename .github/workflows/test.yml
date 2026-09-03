@@ -2,14 +2,17 @@ name: test
 on: [push]
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - name: test coverage
-              run: |
-                npm ci
-                npm run mock-api-background
-                sleep 3 # wait for mock-api-background to eget up and running
-                npm test -- --coverage
-                bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: test coverage
+        run: |
+          npm ci
+          npm run mock-api-background
+          sleep 3 # wait for mock-api-background to eget up and running
+          npm test -- --coverage
+          bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
