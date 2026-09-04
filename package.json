@@ -1,12 +1,13 @@
 {
   "name": "realoptions-node-sdk",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "description": "SDK for real options for both client and node",
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "mock-api-background": "nohup prism mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml &",
-    "mock-api": "prism mock https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml"
+    "get_spec": "curl -o references.yml https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/references.yml && curl -o spec.yml https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/spec.yml && curl -o gcp_auth.yml https://raw.githubusercontent.com/realoptions/option_price_faas/master/docs/gcp_auth.yml",
+    "mock-api-background": "npm run get_spec && (nohup npx --yes --package=@stoplight/prism-cli prism mock gcp_auth.yml > prism.log 2>&1 &)",
+    "mock-api": "npm run get_spec && npx --yes --package=@stoplight/prism-cli prism mock gcp_auth.yml"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,7 @@
     "url": "https://github.com/realoptions/node-sdk/issues"
   },
   "homepage": "https://github.com/realoptions/node-sdk#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.6"
-  },
   "devDependencies": {
-    "@stoplight/prism-cli": "^5.12.0",
-    "jest": "^27.4.7"
+    "jest": "^30.5.1"
   }
 }
